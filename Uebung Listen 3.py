@@ -1,8 +1,8 @@
 # LC = List Comprehension
 
 
-# 1: Die Listen 4_1 und 4_2 enthalten einen gemeinsamen Floatwert. Liste 4_3 soll
-# bis zu diesem Wert nur die Werte aus Liste 4_1 und ab diesem Wert nur Werte aus Liste 2 enthalten.
+# 1: Die Listen 1_1 und 1_2 enthalten einen gemeinsamen Floatwert. Liste 1_3 soll
+# bis zu diesem Wert nur die Werte aus Liste 1_1 und ab diesem Wert nur Werte aus Liste 2 enthalten.
 # Tipp: Wandle die Werte in einen String um und wende die String- Methode isdecimal() an. 
 
 print("Aufgabe 1")
@@ -16,16 +16,17 @@ for x in liste1_1:
         ind1_1=liste1_1.index(x)
 for x in liste1_2:
     if str(x).isdecimal():
-        ind4_1=liste1_2.index(x)
-liste1_3=liste1_1[:ind4_1]+liste1_2[ind1_2:]
-print(liste1_3)
+        ind1_2=liste1_2.index(x)
+liste1_3=liste1_1[:ind1_1]+liste1_2[ind1_2:]
+print(liste1_2[ind1_2], ind1_2, len(liste1_2))
+
 
 
 # 2 Erzeuge eine Liste bis 100, in der statt einer durch 5 teilbaren Zahl eine Liste eingefügt wird, 
 # die alle bis dorthin durch 5 teilbaren Zahlen enthält. Also: [[0],1,2,3,4,[0,5],6,7,8,9,[0,5,10]...
 
 print("Aufgabe 2\n")
-import random
+
 liste2=[x for x in range(100)]
 
 tmpList=[]
@@ -60,6 +61,7 @@ listeOfFive=[listOf5(x) for x in range(100)]
 # Tipp: Wandle die Werte in einen String und dann in eine Liste um.
 
 print("Aufgabe 3\n")
+import random
 liste3=[random.randint(100, 999) for x in range(10)]
 print(liste3, "\n")
 liste3squared=[(int(list(str(x))[1]))**2 for x in liste3]
