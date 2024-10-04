@@ -83,3 +83,36 @@ scope()
 # Ende Namensräume
 
 
+# all / any
+
+daten = [0,1,0,5,0,60,74,32,5,6,-4,3,6,8,52,-12,1000]
+
+# all
+print("Alle Daten zwischen 0 und 100?")
+print(all([(lambda x: x>0 and x<100)(x) for x in daten]))
+
+# any
+print("Gibt es Daten gleich 1000 oder drüber?")
+print(any([(lambda x: x>=1000)(x) for x in daten]))
+
+# filter
+# filtert die Daten aus einer Datenreihe gemäß einer Funktion
+daten1 = list(filter(lambda x: x>0 and x<100, daten))   
+# übrig bleiben die Daten zwischen 0 und 100.
+print(daten1)
+
+daten2 = list(filter(lambda x: x<0 or x>=1000, daten))
+# übrig bleiben die Daten kleiner 0 und größergleich 1000
+print(daten2)
+
+# map
+# map wendet eine Funktion auf eine Datenreihe an
+daten3 = list(map(lambda x: x>0 and x<100, daten))
+# True, wenn 'daten' zwischen 0 und 100, sonst False
+print(daten3)
+
+daten4 = list(map(lambda x: x*2, daten))
+# verdoppelt die Daten aus 'daten'
+print(daten4)
+
+
